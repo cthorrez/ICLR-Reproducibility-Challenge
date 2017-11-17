@@ -27,6 +27,7 @@ def traj_segment_generator(pi, env, horizon, stochastic):
     acs = np.array([ac for _ in range(horizon)])
     prevacs = acs.copy()
 
+    max_ep_length = 0
     while True:
         prevac = ac
         ac, vpred = pi.act(stochastic, ob)
@@ -53,6 +54,10 @@ def traj_segment_generator(pi, env, horizon, stochastic):
 
         cur_ep_ret += rew
         cur_ep_len += 1
+        
+        if cur_ep_len > max_ep_length:
+            max_ep_length = cur_ep_len
+            #print(max_ep_length)
         if new:
             ep_rets.append(cur_ep_ret)
             ep_lens.append(cur_ep_len)
