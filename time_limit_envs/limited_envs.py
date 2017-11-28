@@ -46,6 +46,11 @@ class RoboschoolHopperLimited(RoboschoolHopper):
         time_remaining = self._max_episode_steps - self._elapsed_steps
         time_remaining = np.array([time_remaining])
         #print(time_remaining.shape)
+        timeout = False
+        if self._max_episode_steps - self._elapsed_steps == 0:
+            timeout = True
+
+        info['timeout'] = timeout
         observation = np.concatenate((observation, time_remaining))
         return observation, reward, done, info
 
@@ -74,6 +79,10 @@ class RoboschoolReacherLimited(RoboschoolReacher):
         self._elapsed_steps += 1
         time_remaining = self._max_episode_steps - self._elapsed_steps
         time_remaining = np.array([time_remaining])
+
+        if self._max_episode_steps - self._elapsed_steps == 0:
+            timeout = True
+
         #print(time_remaining.shape)
         observation = np.concatenate((observation, time_remaining))
         return observation, reward, done, info
@@ -103,6 +112,10 @@ class RoboschoolInvertedPendulumLimited(RoboschoolInvertedPendulum):
         self._elapsed_steps += 1
         time_remaining = self._max_episode_steps - self._elapsed_steps
         time_remaining = np.array([time_remaining])
+
+        if self._max_episode_steps - self._elapsed_steps == 0:
+            timeout = True
+
         #print(time_remaining.shape)
         observation = np.concatenate((observation, time_remaining))
         return observation, reward, done, info

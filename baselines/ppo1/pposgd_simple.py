@@ -90,6 +90,7 @@ def traj_segment_generator(pi, env, horizon, stochastic):
             ob = env.reset()
         t += 1
 
+# TODO do partial bootstrapping here I think
 def add_vtarg_and_adv(seg, gamma, lam):
     """
     Compute target value using TD(lambda) estimator, and advantage with GAE(lambda)
@@ -190,7 +191,7 @@ def learn(env, env2, policy_func, *,
 
         if iters_so_far % 5 == 0:
             reward, disc = eval_one_episode(pi, env2, stochastic=True)
-            x.append(iters_so_far)
+            x.append(timesteps_so_far)
             y.append(reward)
             y_disc.append(disc)
 
