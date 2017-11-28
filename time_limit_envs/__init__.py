@@ -19,3 +19,26 @@ register(
     reward_threshold=2500.0,
     tags={ "pg_complexity": 8*1000000 },
 )
+
+
+# This one has T = 300 and has time and flag in observation
+register(
+    id='RoboschoolReacherLimited-v1',
+    #entry_point='roboschool:RoboschoolHopper',
+    entry_point='time_limit_envs.limited_envs:RoboschoolReacherLimited',
+    #max_episode_steps=1000,
+    max_episode_steps=50,
+    reward_threshold=18.0,
+    tags={ "pg_complexity": 1*1000000 },
+)
+
+
+register(
+    id='RoboschoolInvertedPendulumLimited-v1',
+    entry_point='time_limit_envs.limited_envs:RoboschoolInvertedPendulumLimited',
+    max_episode_steps=1000,
+    reward_threshold=950.0,
+    tags={ "pg_complexity": 1*1000000 },
+)
+
+

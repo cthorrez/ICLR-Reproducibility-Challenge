@@ -1,5 +1,7 @@
 from gym.envs.toy_text.frozen_lake import FrozenLakeEnv
 from roboschool.gym_mujoco_walkers import RoboschoolHopper
+from roboschool.gym_reacher import RoboschoolReacher
+from roboschool.gym_pendulums import RoboschoolInvertedPendulum
 from gym import Wrapper
 import time
 import numpy as np
@@ -50,6 +52,64 @@ class RoboschoolHopperLimited(RoboschoolHopper):
     def _reset(self):
         self._elapsed_steps = 0
         tmp = super(RoboschoolHopperLimited, self)._reset()
+        out = np.concatenate((tmp, np.array([0])))
+        return out
+
+
+class RoboschoolReacherLimited(RoboschoolReacher):
+    def __init__(self):
+        super(RoboschoolReacherLimited, self).__init__()
+        self._max_episode_steps = 50
+        self._elapsed_steps = 0
+
+        low = self.observation_space.low
+        high = self.observation_space.high
+        low = np.concatenate((low, np.array([50])))
+        high = np.concatenate((high, np.array([50])))
+        self.observation_space = spaces.Box(low, high)
+
+
+    def _step(self, action):
+        observation, reward, done, info = super(RoboschoolReacherLimited, self)._step(action)
+        self._elapsed_steps += 1
+        time_remaining = self._max_episode_steps - self._elapsed_steps
+        time_remaining = np.array([time_remaining])
+        #print(time_remaining.shape)
+        observation = np.concatenate((observation, time_remaining))
+        return observation, reward, done, info
+
+    def _reset(self):
+        self._elapsed_steps = 0
+        tmp = super(RoboschoolReacherLimited, self)._reset()
+        out = np.concatenate((tmp, np.array([0])))
+        return out
+
+
+class RoboschoolInvertedPendulumLimited(RoboschoolInvertedPendulum):
+    def __init__(self):
+        super(RoboschoolInvertedPendulumLimited, self).__init__()
+        self._max_episode_steps = 1000
+        self._elapsed_steps = 0
+
+        low = self.observation_space.low
+        high = self.observation_space.high
+        low = np.concatenate((low, np.array([1000])))
+        high = np.concatenate((high, np.array([1000])))
+        self.observation_space = spaces.Box(low, high)
+
+
+    def _step(self, action):
+        observation, reward, done, info = super(RoboschoolInvertedPendulumLimited, self)._step(action)
+        self._elapsed_steps += 1
+        time_remaining = self._max_episode_steps - self._elapsed_steps
+        time_remaining = np.array([time_remaining])
+        #print(time_remaining.shape)
+        observation = np.concatenate((observation, time_remaining))
+        return observation, reward, done, info
+
+    def _reset(self):
+        self._elapsed_steps = 0
+        tmp = super(RoboschoolInvertedPendulumLimited, self)._reset()
         out = np.concatenate((tmp, np.array([0])))
         return out
 
