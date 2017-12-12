@@ -13,11 +13,17 @@
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 13
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 14
 
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 15
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 16
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 17
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 18
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 19
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 15
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 16
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 17
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 18
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 19
+
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 20
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 21
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 22
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 23
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 24
 
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 30
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolHopperLimited-v1 --seed 31 
