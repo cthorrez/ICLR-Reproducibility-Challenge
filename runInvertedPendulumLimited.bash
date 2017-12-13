@@ -21,11 +21,17 @@
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 18
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 19
 
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 20
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 21
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 22
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 23
-python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 24
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 20
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 21
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 22
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 23
+#python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 24
+
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 25
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 26
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 27
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 28
+python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 29
 
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 30
 #python3 -m baselines.ppo1.run_mujoco --env RoboschoolInvertedPendulumLimited-v1 --seed 31
