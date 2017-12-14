@@ -42,3 +42,36 @@ register(
 )
 
 
+
+
+# envs without time as feature, but with different than normal time limits
+register(
+    id='RoboschoolReacherCT-v1',
+    entry_point='roboschool:RoboschoolReacher',
+    max_episode_steps=50,
+    reward_threshold=18.0,
+    tags={ "pg_complexity": 1*1000000 },
+    )
+
+register(
+    id='RoboschoolHopperCT-v1',
+    entry_point='roboschool:RoboschoolHopper',
+    max_episode_steps=300,
+    reward_threshold=2500.0,
+    tags={ "pg_complexity": 8*1000000 },
+    )
+
+register(
+    id='RoboschoolInvertedPendulumCT-v1',
+    entry_point='roboschool:RoboschoolInvertedPendulum',
+    max_episode_steps=1000,
+    reward_threshold=950.0,
+    tags={ "pg_complexity": 1*1000000 },
+    )
+
+
+
+
+
+
+
